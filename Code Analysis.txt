@@ -1,0 +1,20 @@
+Code Analysis:
+Inputs
+subscription_name: The full name of the customer's subscription.
+
+Flow
+Get the subscription ID using the get_subscription_id function.
+Get the resource group name using the get_resource_group_name function.
+Create a NetworkManagementClient and a ResourceManagementClient using the obtained subscription ID.
+Iterate over each resource group and get a list of NSGs.
+Create SSH inbound rule in NSGs with names ending in "platform-nsg" using the create_ssh_rule function.
+Create RDP inbound rules in NSGs with names ending in "developer-nsg" using the create_rdp_rules function.
+Get a list of PostgreSQL servers in the resource group.
+Create a firewall rule on each PostgreSQL server using the begin_create_or_update method of PostgreSQLManagementClient.
+Get the ID of the customer's virtual network using the get_vnet_id function.
+Check if the peering between the customer's virtual network and the "ManagementEU-Vnet" already exists.
+If the peering does not exist, create it using the begin_create_or_update method of NetworkManagementClient.
+Sign out of the current subscription and sign in to the "ManagementEU" subscription.
+Create a peering from the "ManagementEU-Vnet" to the customer's virtual network using the begin_create_or_update method of NetworkManagementClient.
+Outputs
+Messages indicating the creation of SSH inbound rules, RDP inbound rules, firewall rules, and virtual network peerings.

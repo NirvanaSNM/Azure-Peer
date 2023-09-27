@@ -1,0 +1,19 @@
+Example Usage:
+
+WELCOME TO THE AZURE PEERING TOOL FOR EU CUSTOMERS
+THIS SCRIPT VERSION SHOULD BE USED ONLY FOR EU CUSTOMERS, PLEASE DOUBLE CHECK CUSTOMER'S REGION!
+
+Enter customer's subscription full name (case sensitive): <subscription_name>
+
+Loading, please wait...
+
+RDP inbound rules created in the NSG <nsg_name>
+Firewall rule created in <server_name>
+Peering on the customer created successfully.
+Peering on ManagementEU Vnet created successfully.
+
+REMEMBER TO CHECK MESSAGES FOR ERRORS!!!
+
+Press any key to close and enjoy your day :)
+
+
